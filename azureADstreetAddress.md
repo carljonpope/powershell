@@ -1,4 +1,4 @@
-# For the Envoy deployment, need to sync AZ AD users based on Street Address and City. Sync is performed usinng Azure SCIM.
+# For the Envoy deployment, need to sync Azure AD users based on Street Address and City. Sync is performed using Azure SCIM.
 
 Need to check that street address is the same for all users in Cor089GGEnvoy group
 
