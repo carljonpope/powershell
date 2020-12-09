@@ -1,6 +1,6 @@
 # For the Envoy deployment, need to sync Azure AD users based on Street Address and City. Sync is performed using Azure SCIM.
 
-Need to check that street address is the same for all users in Cor089GGEnvoy group
+Need to check that street address is the same for all users in xxxXXXGGEnvoy group
 
 ```
 get-azureadgroupmember -objectid xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | select displayname | out-file C:\users\xxxxxx\desktop\users.txt
