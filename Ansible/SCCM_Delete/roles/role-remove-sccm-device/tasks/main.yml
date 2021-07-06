@@ -1,0 +1,77 @@
+---
+- block:
+  - name: "Remove AD computer object"
+    win_domain_computer:
+      name: "{{ ad_computer_name }}"
+      domain_server: "{{ dc_name }}"
+      state: absent
+    register: remove_ad_comp_obj
+    when:
+      - del_ad_comp_obj == true
+
+  - name: "Remove SCCM device"
+    win_shell: |
+      $CmModule = Get-Module -Name ConfigurationManager
+      if (!$CmModule) {
+        Import-Module -Name "$($ENV:SMS_ADMIN_UI_PATH)\..\ConfigurationManager.psd1"
+      }
+
+      $GetPSDrvSplat = @{
+        "Name" = "{{ sccm_site_code }}"
+        "PSProvider" = "CMSite"
+        "ErrorAction" = "SilentlyContinue"
+      }
+      $CmDrive = Get-PSDrive @GetPSDrvSplat
+      if (!$CmDrive) {
+        $NewPSDrvSplat = @{
+          "Name" = "{{ sccm_site_code }}"
+          "PSProvider" = "AdminUI.PS.Provider\CMSite"
+          "Root" = "{{ sccm_svr_name }}"
+        }
+        New-PSDrive @NewPSDrvSplat | Out-Null
+      }
+
+      Set-Location "$("{{ sccm_site_code }}"):"
+
+      $SccmDevice = Get-CMDevice -Name "{{ ad_computer_name }}"
+      if (!$SccmDevice) {
+        Write-Output '"{{ ad_computer_name }}" is absent from SCCM.'
+      }
+      else {
+        Remove-CMDevice -Name $SccmDevice.Name -Force
+      }
+    become: yes
+    become_method: runas
+    register: del_sccm_device
+  rescue:
+    - name: "Rescue Failure and Make Error Code"
+      set_fact:
+        work_notes: |
+          Template: {{ template_name | default('NaN') }}
+          Task: {{ ansible_failed_task.name }}
+          Error: {{ ansible_failed_result }}
+        error_code: "{{ template_id | default('NaN') }}-{{ (ansible_failed_task.name | hash('md5'))[-4:] }}"
+    - debug: msg="error_message is {{error_code}}"
+    - debug: msg="Worknotes are {{ work_notes }}"
+
+- name: "Successful work notes"
+  set_fact:
+    work_notes: 'Successfully removed "{{ ad_computer_name }}".'
+    error_code: "{{ template_id }}-000"
+  when:
+    - error_code is undefined
+
+- name: "Update SNow results"
+  snow_record:
+    username: "{{ snow_username }}"
+    password: "{{ snow_password }}"
+    instance: "{{ snow_instance }}"
+    number: "{{ snow_tasknumber }}"
+    table: sc_task
+    state: present
+    data:
+      state: "{{ 3 if (error_code == template_id + '-000') else 0 }}"
+      work_notes : "{{ work_notes }}"
+      u_automation_error_code: "{{ error_code }}"
+  delegate_to: localhost
+...

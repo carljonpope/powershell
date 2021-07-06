@@ -1,0 +1,7 @@
+---
+- hosts: "{{ hostgroup | default('sccm_automation_group') }}"
+  tasks:
+    - name: "Remove SCCM device"
+      include_role:
+        name: role-remove-sccm-device
+...

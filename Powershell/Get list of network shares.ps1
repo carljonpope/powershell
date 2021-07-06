@@ -1,0 +1,1 @@
+﻿get-wmiobject -class win32_share -computer stk-file01 | Select-Object -property  Name,Path,Caption | export-csv c:\users\33144\desktop\stk-file01Shares.csv

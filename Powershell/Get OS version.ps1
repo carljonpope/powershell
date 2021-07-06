@@ -1,0 +1,1 @@
+﻿Get-WmiObject Win32_OperatingSystem -ComputerName "not-sql" | Select PSComputerName, Caption, OSArchitecture, Version, BuildNumber | FL
