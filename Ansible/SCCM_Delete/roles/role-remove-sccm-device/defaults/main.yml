@@ -1,9 +1,0 @@
----
-ad_computer_name: "{{ req_ad_computer_name | trim | upper | regex_replace('^(?P<hostname>[\\w\\-]+)\\.(?P<domain>.+)$', '\\g<hostname>') }}"
-dc_name: "cle-dc01.amtrustservices.com"
-del_ad_comp_obj: "{{ req_del_ad_comp_obj | default('true') | bool }}"
-sccm_site_code: "AMG"
-sccm_svr_name: "clepsccm01.amtrustservices.com"
-template_name: "{{ tower_job_template_name | default('NaN') }}"
-template_id: "{{ tower_job_template_id | default('x') }}"
-...
