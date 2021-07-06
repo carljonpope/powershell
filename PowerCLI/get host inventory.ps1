@@ -1,1 +1,0 @@
-﻿get-vmhost | Select Name, @{N=”Cluster”;E={Get-Cluster -VMHost $_}},@{N=”Datacenter”;E={Get-Datacenter -VMHost $_}} | Export-csv c:\temp\inventory.csv
