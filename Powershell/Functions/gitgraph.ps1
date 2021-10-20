@@ -1,0 +1,1 @@
+function gitgraph {git log --oneline --graph --decorate --all}
