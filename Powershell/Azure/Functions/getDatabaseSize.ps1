@@ -14,4 +14,4 @@ $result = foreach ($DB in $Databases)
 $DBSize = Get-TotalDatabaseSizeKb $DB
 "DB ($($DB.Name)) $($DBSize / 1024)Mb"
 }
-$result | Out-File c:\temp\dbsizes.txt
+$result | Out-File c:\temp\prod2dbsizes.txt

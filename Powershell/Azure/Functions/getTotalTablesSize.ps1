@@ -32,4 +32,4 @@ $result = foreach($item in $StorageAccounts){
     Write-Output "Tables in $name : $rounded MB"
 }
 
-$result | Out-File c:\temp\tables.txt
+$result | Out-File C:\temp\testtables.txt

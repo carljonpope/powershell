@@ -10,4 +10,4 @@ $result = foreach($item in $StorageAccounts){
     Write-Output "Blobs in $name : $rounded MB"
 }
 
-$result | Out-File c:\temp\blobs.txt
+$result | Out-File c:\temp\testblobs.txt

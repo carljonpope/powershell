@@ -1,6 +1,5 @@
 $vnets = get-azvirtualnetwork
 
-
 foreach ($vnet in $vnets) {
 
     $row = New-Object psobject
@@ -11,7 +10,5 @@ foreach ($vnet in $vnets) {
 
 
     Export-Csv C:\temp\testVnets.csv -Append -InputObject $row
-
-
 
 }
