@@ -1,4 +1,4 @@
-$webApps = Get-Content "C:\Users\Popec\OneDrive - Broadridge Financial Solutions, Inc\Projects\FL dev App service consolidation\webApps1.txt"
+$webApps = Get-Content "C:\temp\Projects\dev App service consolidation\webApps1.txt"
 
 
 
