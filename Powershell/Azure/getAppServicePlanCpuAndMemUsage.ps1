@@ -1,4 +1,4 @@
-#$resourceId = "/subscriptions/eba801d3-f1de-4a28-b172-ee8880918ce0/resourceGroups/prod1-hlhydration-rg/providers/Microsoft.Web/serverFarms/prod1-hlhydration-as"
+#$resourceId = "/subscriptions/xxx1de-4a28-b172-ee888xxxce0/resourceGroups/prod1-hydration-rg/providers/Microsoft.Web/serverFarms/prod1-hydration-as"
 $warningPreference = 'silentlyContinue'
 $startTime  = "2021-11-15T04:00:00Z"
 $endTime    = "2021-12-15T04:00:00Z"
