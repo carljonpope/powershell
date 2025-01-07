@@ -1,5 +1,5 @@
 $paths = get-content -path "c:\temp\paths.txt"
-$identity = 'amtrustservices\33144'
+$identity = 'xxxxxxxxx\33144'
 $rights = 'FullControl'
 $inheritance = 'ContainerInherit, ObjectInherit'
 $propagation = 'None'
@@ -20,7 +20,7 @@ foreach ($path in $paths) {
 
 
 <# Create the ACE
-$identity = 'amtrustservices\33144'
+$identity = 'xxxxxxxxx\33144'
 $rights = 'FullControl' #Other options: [enum]::GetValues('System.Security.AccessControl.FileSystemRights')
 $inheritance = 'None' #Other options: [enum]::GetValues('System.Security.AccessControl.Inheritance')
 $propagation = 'None' #Other options: [enum]::GetValues('System.Security.AccessControl.PropagationFlags')
