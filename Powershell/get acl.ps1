@@ -1,4 +1,4 @@
-<#$paths = get-content -path "C:\Users\33144\OneDrive - AmTrust North America\Projects\Milan AIAI files\paths.txt"
+<#$paths = get-content -path "C:\Users\33144\OneDrive - xxxxxx North America\Projects\Milan AIAI files\paths.txt"
 
 foreach ($path in $paths) {
 
