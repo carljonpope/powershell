@@ -1,0 +1,1 @@
+﻿Get-ChildItem -Recurse | Select-String "error:" -List | Select Path
