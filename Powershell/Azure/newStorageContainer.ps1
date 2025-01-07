@@ -1,4 +1,4 @@
-$storageContext = New-AzStorageContext -StorageAccountName fldevstorageacc02 -StorageAccountKey B5q+oFSQU5MCwLMtDlb9JAwODP7ObucJK2KeyBtKHg8Bg7/S/2RBZMz+jqR1d1wVnp40srFxpQw3l6SfKZLK3Q== #<enterKeyHere>
+$storageContext = New-AzStorageContext -StorageAccountName fldevstorageacc02 -StorageAccountKey xxxKeyBtKxxx2RBZMz+jxxxK3Q== #<enterKeyHere>
 New-AzStorageContainer -name "sqldbauditlogs" -Context $storageContext
 
 
