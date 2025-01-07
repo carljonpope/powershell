@@ -9,10 +9,10 @@ catch {
     throw $_.Exception
 }
 
-Stop-AzFunctionApp -Name "br-az-ics-fcs-prd-a15s-uksouth-fa01" -ResourceGroupName "br-az-ics-fcs-dev-a15s-uksouth-rg01" -Force
-Start-AzFunctionApp -Name "br-az-ics-fcs-prd-a15s-uksouth-fa01" -ResourceGroupName "br-az-ics-fcs-dev-a15s-uksouth-rg01"
+Stop-AzFunctionApp -Name "prd-xxx-uksouth-fa01" -ResourceGroupName "dev-xxx-uksouth-rg01" -Force
+Start-AzFunctionApp -Name "prd-xxx-uksouth-fa01" -ResourceGroupName "dev-xxx-uksouth-rg01"
 
-Stop-AzFunctionApp -Name "br-az-ics-fcs-prd-a15s-ukwest-fa01" -ResourceGroupName "br-az-ics-fcs-dev-a15s-uksouth-rg01" -Force
-Start-AzFunctionApp -Name "br-az-ics-fcs-prd-a15s-ukwest-fa01" -ResourceGroupName "br-az-ics-fcs-dev-a15s-uksouth-rg01"
+Stop-AzFunctionApp -Name "prd-xxx-ukwest-fa01" -ResourceGroupName "dev-xxx-uksouth-rg01" -Force
+Start-AzFunctionApp -Name "prd-xxx-ukwest-fa01" -ResourceGroupName "dev-xxx-uksouth-rg01"
 
 Write-Output "Restarted Function Apps"
