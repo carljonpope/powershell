@@ -2,7 +2,7 @@
 
 $vn = Get-AzVirtualNetwork -Name prod2-global-vnet01
 $vn.Subnets | Select  Name, AddressPrefix <# Name ,AddressPrefix ,NetworkSecurityGroup , ServiceEndpoints #> | Out-File c:\temp\prdsubnets.txt
-$vn.AddressSpace | select Name, AddressPrefixes | Out-File c:\temp\brprdaddrspace.txt
+$vn.AddressSpace | select Name, AddressPrefixes | Out-File c:\temp\prdaddrspace.txt
 #$vn.Subnets | Select  Name, NetworkSecurityGroup | Out-File c:\temp\brdevnsg.txt
 
 
