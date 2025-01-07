@@ -25,6 +25,6 @@ Set-AzDiagnosticSetting `
 #}
 
 
-#-EventHubAuthorizationRuleId /subscriptions/352ceeb6-45a6-498a-911e-141314cb3d3b/resourceGroups/prod2-siemintegration-rg/providers/Microsoft.EventHub/namespaces/fcssiemintprod02/authorizationRules/RootManageSharedAccessKey `
+#-EventHubAuthorizationRuleId /subscriptions/xxxx6-45a6-498a-911e-xxxxcb3d3b/resourceGroups/prod2-siemintegration-rg/providers/Microsoft.EventHub/namespaces/fcssiemintprod02/authorizationRules/RootManageSharedAccessKey `
 #-EventHubName prod2-siemintegration-eh01 `
-#-StorageAccountId /subscriptions/352ceeb6-45a6-498a-911e-141314cb3d3b/resourceGroups/prod2-siemintegration-rg/providers/Microsoft.Storage/storageAccounts/prod2diaglogsarchive `
+#-StorageAccountId /subscriptions/xxxx6-45a6-498a-911e-xxxxcb3d3b/resourceGroups/prod2-siemintegration-rg/providers/Microsoft.Storage/storageAccounts/prod2diaglogsarchive `
